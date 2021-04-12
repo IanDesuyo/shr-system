@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      # 將sqlite資料庫掛載出來以避免資料消失
+      # 若使用其他資料庫請將下方一行註解
+      - ./db:/app/db
+    env_file: .env
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_BRAND: ${BRAND}
+        DOMAIN: ${DOMAIN}
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    ports:
+      - "88:80"
+      - "448:443"

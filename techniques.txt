@@ -1,0 +1,141 @@
+藍芽額溫槍:
+    Arduino
+        開源開發版及韌體
+        Open-source electronic prototyping platform enabling users to create interactive electronic objects.
+    Bluetooth
+        藍芽, 短距離無線傳輸協定, 用於傳遞資料
+        Bluetooth is a short-range wireless communication technology standard.
+    JWT
+        JSON Web Token, 額溫槍所輸出的資料格式, 可加密驗證以確保正確性, 也用於網頁前後端登入時的憑證
+        JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
+
+網頁後端:
+    FastAPI
+        基於Python的API框架
+        FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+    MySQL
+        資料庫
+        MySQL is an open-source relational database management system (RDBMS).
+
+網頁前端:
+    React.js
+        前端網頁框架, 由Facebook開發
+        A JavaScript library for building user interfaces.
+    WebSocket
+        一種讓瀏覽器與伺服器進行一段互動通訊的技術, 用於即時通知
+        An advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server.
+    i18n
+        國際化, 但我們只有中日英三種
+        Internationalization (i18n) is the process of preparing software so that it can support local languages and cultural settings.
+    Cloudflare
+        反向代理的內容傳遞網路, 使用目的為提升安全性, 隱藏真實伺服器IP, 優化全球連線速度並降低資料傳輸時間
+        Cloudflare provides content delivery network services, DDoS mitigation, Internet security, and distributed domain name server services.
+
+伺服器:
+    Raspberry Pi
+        樹梅派, 基於Linux的單晶片電腦
+        The Raspberry Pi is a tiny and affordable computer that you can use to learn programming through fun, practical projects.
+    Docker
+        容器化技術, 讓伺服器部屬更加簡單方便
+        Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
+    
+其他:
+    Git
+        版本控制
+        Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+    GitHub
+        原始碼代管服務平台
+        GitHub, Inc. is a provider of Internet hosting for software development and version control using Git.
+    
+我覺得你會問的:
+    為什麼要寫成網頁而不是App?
+        寫成網頁能夠只寫一次程式碼就在多平台上運行, 但當然會因為各平台上的差異而有部分功能無法使用
+        像是iOS因為Safari無內建Bluetooth API而無法與額溫槍連線, 需要透過第三方瀏覽器如Bluefy
+    
+    為什麼要用React.js而不是其他框架?
+        根據stackoverflow 2020的統計, React是僅次於ASP.NET最受喜愛的網頁框架
+        
+    為什麼i18n只有中日英三種?
+        我只會這三種
+
+使用函式庫:
+    藍芽額溫槍:
+        Adafruit_MLX90614_Library
+            紅外線測溫IC所用
+        ArduinoJWT
+            如上方JWT所說
+        SSD1306Ascii
+            輸出到oled螢幕所用
+
+    網頁後端:
+        appdirs
+        async-exit-stack
+        async-generator
+        bcrypt
+        bidict
+        black
+        cffi
+        click
+        cryptography
+        dataclasses
+        fastapi
+            如上方FastAPI所說
+        h11
+        mypy-extensions
+        passlib
+        pathspec
+        pycparser
+        pydantic
+        PyJWT
+            如上方JWT所說
+        PyMySQL
+            API與資料庫溝通所用
+        regex
+            正規表示式
+        six
+        SQLAlchemy
+            將資料庫物件化
+        starlette
+            FastAPI是基於這框架所產的
+        toml
+        typed-ast
+        typing-extensions
+        uvicorn
+            快如閃電的ASGI服務器
+        websockets
+            如上方WebSocket所說
+            
+    網頁前端:
+        @material-ui/core
+            Material風格的核心
+        @material-ui/icons
+        @material-ui/lab
+        @testing-library/jest-dom
+        @testing-library/react
+        @testing-library/user-event
+        axios
+        bluetooth-terminal
+        chart.js
+            圖表渲染
+        i18next
+            如上方i18n所說
+        i18next-browser-languagedetector
+        i18next-http-backend
+        material-table
+        notistack
+        qrcode.react
+            QRCode掃描器
+        qs
+        react
+            如上方React.js所說
+        react-addons-css-transition-group
+        react-chartjs-2
+        react-dom
+        react-i18next
+        react-particles-js
+        react-qr-reader
+        react-router-dom
+        react-scripts
+        reconnecting-websocket
+            如上方WebSocket所說
+        web-vitals

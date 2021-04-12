@@ -1,0 +1,4 @@
+requests==2.25.1
+pyzbar==0.1.8
+opencv-python==4.5.1.48
+RPi.GPIO==0.7.0

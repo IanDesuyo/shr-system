@@ -47,6 +47,9 @@
   "comment": "註解",
   "newReport": "{{user}}回報了新紀錄, {{tempMsg}}",
   "deviceList": "裝置列表",
+  "userList": "帳號列表",
+  "addUser": "新增帳號",
+  "isAdmin": "管理員",
   "id": "編號",
   "uuid": "識別碼",
   "addDevice": "新增裝置",
@@ -61,7 +64,8 @@
     "multiSearch": "可以使用;同時查詢多筆項目",
     "uuidModify": "更改識別碼會導致原本的藍芽耳溫槍無法通過驗證, 更改完請刷新韌體",
     "addDevice": "新增裝置後請使用Arduino IDE將韌體刷入裝置內",
-    "uuidAdd": "請填寫裝置識別碼, 格式須為Short UUIDv4"
+    "uuidAdd": "請填寫裝置識別碼, 格式須為Short UUIDv4",
+    "addUser": "請填寫以下資料來新增帳號"
   },
   "errors": {
     "browserNotSupport": "您所使用的瀏覽器不支援此功能",

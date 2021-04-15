@@ -47,6 +47,9 @@
   "comment": "コメント",
   "newReport": "{{user}}はレポートしました, {{tempMsg}}",
   "deviceList": "デバイスリスト",
+  "userList": "ユーザーリスト",
+  "addUser": "ユーザー追加",
+  "isAdmin": "管理者",
   "id": "ID",
   "uuid": "識別子",
   "addDevice": "デバイス追加",
@@ -61,7 +64,8 @@
     "multiSearch": ";を使用して複数の項目を検索することができます。",
     "uuidModify": "識別子を変更するとBluetooth額温度計は利用不可になります, 変更完了の時にも一度更新してください",
     "addDevice": "デバイス追加後にArduino IDEご利用ください",
-    "uuidAdd": "識別子を入れてくたさい, フィールドはShort UUIDv4にお願いします"
+    "uuidAdd": "識別子を入れてくたさい, フィールドはShort UUIDv4にお願いします",
+    "addUser": "ユーザーを追加するには、以下の情報を入力してください。"
   },
   "errors": {
     "authExpired": "有効期限が切れました, もう一度ログインしてください",

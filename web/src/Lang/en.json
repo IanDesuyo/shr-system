@@ -47,6 +47,9 @@
   "comment": "Comment",
   "newReport": "{{user}} report a new record, {{tempMsg}}",
   "deviceList": "Device List",
+  "userList": "User List",
+  "addUser": "Add User",
+  "isAdmin": "Admin",
   "id": "ID",
   "uuid": "UUID",
   "addDevice": "Add Device",
@@ -61,7 +64,8 @@
     "multiSearch": "Hit: You can use ; to search multiple values",
     "uuidModify": "Modify identifier may cause the original device unable to approved, please IC programming again after revised the identifier",
     "addDevice": "After add the new device, please burn firmware to new device by Aruino IDE",
-    "uuidAdd": "Type in the blank with device identifier, format need to be 'Short UUIDv4'"
+    "uuidAdd": "Type in the blank with device identifier, format need to be 'Short UUIDv4'",
+    "addUser": "Please fill in the following information to add a user"
   },
   "errors": {
     "authExpired": "Authentication expired, please login again",

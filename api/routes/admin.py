@@ -77,7 +77,7 @@ def verify_passport(
 
 @router.get(
     "/records/byDate",
-    tags=["Admin"],
+    tags=["Admin/Record"],
     response_model=List[schemas.FetchResult],
     responses={
         403: {
@@ -118,7 +118,7 @@ def fetch_by_date(
 
 @router.get(
     "/records/byID",
-    tags=["Admin"],
+    tags=["Admin/Record"],
     response_model=List[schemas.FetchResult],
     responses={
         403: {
@@ -149,7 +149,7 @@ def fetch_by_ID(
 
 @router.get(
     "/records/byPhone",
-    tags=["Admin"],
+    tags=["Admin/Record"],
     response_model=List[schemas.FetchResult],
     responses={
         403: {
@@ -180,7 +180,7 @@ def fetch_by_phone(
 
 @router.delete(
     "/record/{recordID}",
-    tags=["Admin"],
+    tags=["Admin/Record"],
     responses={
         200: {
             "content": {"application/json": {"example": "Sucess"}},
@@ -211,7 +211,23 @@ def delete_record(
     return "Sucess"
 
 
-@router.get("/devices")
+@router.get(
+    "/devices",
+    tags=["Admin/Device"],
+    response_model=List[schemas.VerifiedDevice],
+    responses={
+        403: {
+            "description": "Forbidden",
+            "model": schemas.Error,
+            "content": {"application/json": {"example": status.ERROR_403_FORBIDDEN}},
+        },
+        404: {
+            "description": "Device Not Found",
+            "model": schemas.Error,
+            "content": {"application/json": {"example": status.ERROR_404_DEVICE_NOT_FOUND}},
+        },
+    },
+)
 def get_devices(admin: str = Depends(checkAdmin), db: Session = Depends(getDB)):
     devices = db.query(models.Device).all()
 
@@ -220,8 +236,12 @@ def get_devices(admin: str = Depends(checkAdmin), db: Session = Depends(getDB)):
 
 @router.get(
     "/device/{deviceID}/download",
-    tags=["Admin"],
+    tags=["Admin/Device"],
     responses={
+        200: {
+            "description": "Sucess",
+            "content": {"application/zip": {"example": "zip file"}},
+        },
         403: {
             "description": "Forbidden",
             "model": schemas.Error,
@@ -262,7 +282,7 @@ async def download_device(admin: str = Depends(checkAdmin), deviceID: int = Path
 
 @router.post(
     "/device",
-    tags=["Admin"],
+    tags=["Admin/Device"],
     response_model=schemas.VerifiedDevice,
     responses={
         400: {
@@ -289,7 +309,7 @@ def add_device(admin: str = Depends(checkAdmin), data: schemas.AddDevice = ..., 
 
 @router.put(
     "/device/{deviceID}",
-    tags=["Admin"],
+    tags=["Admin/Device"],
     response_model=schemas.VerifiedDevice,
     responses={
         400: {
@@ -331,7 +351,7 @@ def update_device(
 
 @router.delete(
     "/device/{deviceID}",
-    tags=["Admin"],
+    tags=["Admin/Device"],
     responses={
         200: {
             "content": {"application/json": {"example": "Sucess"}},
@@ -367,7 +387,7 @@ def delete_device(admin: str = Depends(checkAdmin), deviceID: int = Path(...), d
 
 @router.get(
     "/users",
-    tags=["Admin"],
+    tags=["Admin/User"],
     response_model=List[schemas.User],
     responses={
         403: {
@@ -385,7 +405,7 @@ def get_users(admin: str = Depends(checkAdmin), db: Session = Depends(getDB)):
 
 @router.post(
     "/user",
-    tags=["Admin"],
+    tags=["Admin/User"],
     response_model=schemas.User,
     responses={
         403: {
@@ -406,7 +426,7 @@ def add_user(admin: str = Depends(checkAdmin), data: schemas.AddUser = ..., db: 
 
 @router.put(
     "/user/{user_id}",
-    tags=["Admin"],
+    tags=["Admin/User"],
     response_model=schemas.User,
     responses={
         403: {
@@ -431,7 +451,7 @@ def update_user(
     user.idNum = data.idNum
     user.isAdmin = data.isAdmin
     if data.password:
-        user.password = data.password
+        user.password = sha256_crypt.hash(data.password)
     if data.phone:
         user.phone = data.phone
 
@@ -441,7 +461,7 @@ def update_user(
 
 @router.delete(
     "/user/{user_id}",
-    tags=["Admin"],
+    tags=["Admin/User"],
     responses={
         200: {
             "content": {"application/json": {"example": "Sucess"}},

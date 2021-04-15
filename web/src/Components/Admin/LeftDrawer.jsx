@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     cursor: "pointer",
   },
   bottom: {
-    width: 250,
+    width: 280,
     position: "fixed",
     bottom: 0,
     paddingBottom: 20,
@@ -102,6 +102,9 @@ export default function LeftDrawer(props) {
               </Typography>
               <Typography className={classes.appDetails} variant="subtitle2" onClick={() => history.push("/terms")}>
                 Terms
+              </Typography>
+              <Typography className={classes.appDetails} variant="subtitle2" onClick={() => {history.push("/api/redoc");window.location.reload()}}>
+                API
               </Typography>
             </Grid>
             <Typography

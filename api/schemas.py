@@ -64,7 +64,7 @@ class FetchByDate(BaseModel):
 
 class FetchPerson(BaseModel):
     username: str = None
-    phone: int
+    phone: int = None
     idNum: str
 
 

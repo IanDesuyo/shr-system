@@ -10,6 +10,8 @@ services:
       # 若使用其他資料庫請將下方一行註解
       - ./db:/app/db
     env_file: .env
+    networks: 
+      - shrs_network
 
   web:
     build:
@@ -20,6 +22,20 @@ services:
         DOMAIN: ${DOMAIN}
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    ports:
-      - "88:80"
-      - "448:443"
+    # ports:
+    #   - "88:80"
+    #   - "448:443"
+    environment:
+      VIRTUAL_HOST: ${DOMAIN}
+    depends_on:
+      - api
+    networks:
+      - shrs_network
+      - nginx_network
+
+networks:
+  shrs_network:
+    name: shrs_network
+  nginx_network:
+    external: true
+    name: nginx_network

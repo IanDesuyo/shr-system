@@ -20,8 +20,8 @@ export default function GuestForm() {
   const classes = useStyles();
   const { t } = useTranslation();
   const history = useHistory();
-  const [idNum, setIdNum] = useState("A123456789");
-  const [phone, setPhone] = useState("0912345678");
+  const [idNum, setIdNum] = useState("");
+  const [phone, setPhone] = useState("");
   const [stayTime, setStayTime] = useState(30);
   const [temperature, setTemperature] = useState("");
   const [tempVerified, setTempVerified] = useState(false);

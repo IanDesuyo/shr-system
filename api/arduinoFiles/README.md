@@ -28,7 +28,7 @@ Comment: {COMMENT}
 1. Install Arduino IDE from [arduino.cc](https://www.arduino.cc/)
 2. Connect the Thermometer to your PC via USB cable
 3. Open `btThermometer.ino`
-4. Select `Tools > Board` and check the settings is match with your board
+4. Select `Tools > Board` and check the settings is matched with your board
 5. Select `Tools > Port` and choose your COM port. If you see multiple ports, please try them in order
 6. Click `Upload` button and wait for a moment
 7. Done! The device is ready to use now

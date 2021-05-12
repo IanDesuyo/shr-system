@@ -61,7 +61,7 @@
   "person": "身分",
   "stayAt": "時間内での滞在",
   "hits": {
-    "multiSearch": ";を使用して複数の項目を検索することができます。",
+    "multiSearch": "\";\" を使用して複数の項目を検索することができます。",
     "uuidModify": "識別子を変更するとBluetooth額温度計は利用不可になります, 変更完了の時にも一度更新してください",
     "addDevice": "デバイス追加後にArduino IDEご利用ください",
     "uuidAdd": "識別子を入れてくたさい, フィールドはShort UUIDv4にお願いします",

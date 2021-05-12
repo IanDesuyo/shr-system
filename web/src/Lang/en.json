@@ -20,7 +20,7 @@
   "passportSubtitle": "Please show this at the entrance",
   "passportTimelimit": "Valid for 15 minutes",
   "createdAt": "Created at",
-  "leastUse": "Least Used",
+  "leastUse": "lastest Used",
   "submit": "Submit",
   "goback": "Back",
   "leave": "Leave",
@@ -59,9 +59,9 @@
   "admin": "Admin",
   "add": "Add",
   "person": "Identity",
-  "stayAt": "Stay in time",
+  "stayAt": "Stay in this range",
   "hits": {
-    "multiSearch": "Hit: You can use ; to search multiple values",
+    "multiSearch": "Hit: You can use \";\" to search multiple values",
     "uuidModify": "Modify identifier may cause the original device unable to approved, please IC programming again after revised the identifier",
     "addDevice": "After add the new device, please burn firmware to new device by Aruino IDE",
     "uuidAdd": "Type in the blank with device identifier, format need to be 'Short UUIDv4'",
@@ -83,7 +83,7 @@
     "temperatureError": "Wrong Value, please measure again",
     "temperatureTooHigh": "Hyperthermia! please measure again later",
     "wrongFormat": "Incorrect format",
-    "commentTooLong": "Comment overlong, it need to less then 120 words"
+    "commentTooLong": "Comment overlong, it needs less then 120 words"
   },
   "mtable": {
     "row": "rows",

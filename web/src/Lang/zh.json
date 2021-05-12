@@ -61,7 +61,7 @@
   "person": "身分",
   "stayAt": "待在時段內",
   "hits": {
-    "multiSearch": "可以使用;同時查詢多筆項目",
+    "multiSearch": "可以使用 \";\" 同時查詢多筆項目",
     "uuidModify": "更改識別碼會導致原本的藍芽耳溫槍無法通過驗證, 更改完請刷新韌體",
     "addDevice": "新增裝置後請使用Arduino IDE將韌體刷入裝置內",
     "uuidAdd": "請填寫裝置識別碼, 格式須為Short UUIDv4",

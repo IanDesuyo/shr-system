@@ -25,6 +25,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(1),
   },
+  logomaker: {
+    cursor: "pointer",
+  },
   avatar: {
     width: 100,
     height: 100,
@@ -33,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
   },
   fab: {
-    position: "fixed ",
+    position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },
@@ -50,18 +53,14 @@ export default function About() {
         <Typography variant="h3">About</Typography>
         <Divider className={classes.divider} />
         <Typography variant="h4" className={classes.subtitle}>
-          Build By
+          Made By
         </Typography>
         <Grid container spacing={2}>
           {[
-            { name: "Ian", image: "https://avatars.githubusercontent.com/u/59338745", comment: "簡介" },
-            {
-              name: "FoFo",
-              image: "https://avatars.githubusercontent.com/u/67149274",
-              comment: "簡介",
-            },
-            { name: "BallJim", image: "", comment: "簡介" },
-            { name: "金主", image: "", comment: "簡介" },
+            { name: "林宸毅 (Ian)", image: "https://avatars.githubusercontent.com/u/59338745", comment: "網頁開發及伺服器部屬" },
+            { name: "陳明泉 (Ming)", image: "https://avatars.githubusercontent.com/u/67149274", comment: "伺服器部屬及文書處理" },
+            { name: "段傳駿 (Jim)", image: "https://cdn.discordapp.com/attachments/768095170876014638/843744964411129867/1_2.JPG", comment: "硬體製作及文書處理" },
+            { name: "李英禾 (Oniichan)", image: "https://cdn.discordapp.com/attachments/768095170876014638/843744327305265152/1_2.JPG", comment: "硬體製作及文書處理" },
           ].map((val, index) => (
             <Grid item lg={3} xs={12} key={index}>
               <Card>
@@ -84,8 +83,8 @@ export default function About() {
         </Typography>
         <Grid container spacing={2}>
           {[
-            { name: "Mrs.崔", image: "", comment: "簡介" },
-            { name: "Mr.楊", image: "", comment: "簡介" },
+            { name: "崔守華", image: "https://cdn.discordapp.com/attachments/621641123999383561/843747851142168626/ff321e830a3b8ca4fd5b55a76b130b87.jpg", comment: "指導老師" },
+            { name: "楊國慶", image: "https://cdn.discordapp.com/attachments/621641123999383561/843747758141079572/5bde98b81457c917066da5efbb11d323.jpg", comment: "班級導師" },
           ].map((val, index) => (
             <Grid item lg={3} xs={12} key={index}>
               <Card>
@@ -94,11 +93,17 @@ export default function About() {
                   <Typography variant="h6" align="center">
                     {val.name}
                   </Typography>
+                  <Typography variant="subtitle1" align="center">
+                    {val.comment}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
           ))}
         </Grid>
+        <Typography variant="subtitle1" className={classes.logomaker} onClick={() => (window.location.href = "https://www.flaticon.com/authors/catkuro")}>
+          Logo made by catkuro, Free for personal and commercial purpose with attribution.
+        </Typography>
         <Typography variant="h4" className={classes.subtitle}>
           Builds with
         </Typography>

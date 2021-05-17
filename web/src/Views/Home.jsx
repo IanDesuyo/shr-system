@@ -166,7 +166,7 @@ export default function Home() {
           <Button onClick={() => setLangDialogOpen(true)}>{t("chooseLang")}</Button>
         </Grid>
         <Grid item xs={4}>
-          <Button>{`Version: ${version}`}</Button>
+          <Button onClick={() => history.push("/about")}>{`Version: ${version}`}</Button>
         </Grid>
       </Grid>
       <LangDialog open={langDialogOpen} onClose={() => setLangDialogOpen(false)} />

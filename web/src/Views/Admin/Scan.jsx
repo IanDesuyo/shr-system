@@ -34,6 +34,7 @@ export default function Scan(props) {
   const handleScan = result => {
     if (!result) return;
     if (data === result) {
+      return;
     }
     let decoded = null;
     try {
@@ -61,7 +62,8 @@ export default function Scan(props) {
       history.push("/admin");
     }
     if (!navigator.mediaDevices) {
-      alert(t("errors.browserNotSupport")) || Snackbar.error(t("errors.browserNotSupport"), { autoHideDuration: 3000, preventDuplicate: true });
+      alert(t("errors.browserNotSupport")) ||
+        Snackbar.error(t("errors.browserNotSupport"), { autoHideDuration: 3000, preventDuplicate: true });
       history.push("/admin");
     }
   }, [history, t]);
@@ -70,7 +72,13 @@ export default function Scan(props) {
     <>
       <Grid container>
         <Grid item lg={4} md={6} xs={12}>
-          <QrReader delay={300} showViewFinder={false} onError={err => console.error(err)} onScan={handleScan} className={classes.scanner} />
+          <QrReader
+            delay={300}
+            showViewFinder={false}
+            onError={err => console.error(err)}
+            onScan={handleScan}
+            className={classes.scanner}
+          />
         </Grid>
         <Grid item lg={4} md={6} xs={12} className={classes.verifyResult}>
           {res ? (

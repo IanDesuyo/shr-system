@@ -7,7 +7,7 @@ export const HttpError = err => {
     if (err.response.status === 422) {
       return err.response.data.detail[0].msg;
     }
-    if (err.response.data) {
+    if (err.response.data && err.response.data.detail) {
       return err.response.data.detail.i18n || err.response.data.detail.msg;
     }
     return "errors.unknownError";

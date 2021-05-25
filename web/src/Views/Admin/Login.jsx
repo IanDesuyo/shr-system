@@ -49,14 +49,17 @@ const useStyles = makeStyles(theme => ({
     transition: "0.5s",
     transform: "scale(1.05)",
   },
+  previewNotice: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
 export default function SignIn(props) {
   const classes = useStyles();
   const { t } = useTranslation();
   const history = useHistory();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState("Admin");
+  const [password, setPassword] = useState("Admin");
   const [error, setError] = useState();
   const [isLoading, setLoading] = useState(false);
   const { token, setToken } = useAuth();
@@ -87,6 +90,9 @@ export default function SignIn(props) {
       <Typography component="h1" variant="h5">
         {t("signin")}
       </Typography>
+      <Alert variant="filled" severity="info" className={classes.previewNotice}>
+        此為預覽版系統, 預設帳號及密碼皆為Admin
+      </Alert>
       <form className={classes.form} onSubmit={handleSubmit}>
         <TextField
           variant="outlined"

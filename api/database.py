@@ -28,5 +28,9 @@ def initDatabase():
         defaultAdmin = models.User(
             username="Admin", password=sha256_crypt.hash("Admin"), idNum="A000000000", isAdmin=True
         )
+        testingUser = models.User(
+            username="user1", password=sha256_crypt.hash("user1"), idNum="A000000001", isAdmin=False
+        )
         db.add(defaultAdmin)
+        db.add(testingUser)
         db.commit()

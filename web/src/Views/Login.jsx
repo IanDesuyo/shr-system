@@ -51,6 +51,10 @@ const useStyles = makeStyles(theme => ({
     transition: "0.5s",
     transform: "scale(1.05)",
   },
+  previewNotice: {
+    width: "100%",
+    marginTop: theme.spacing(2),
+  },
 }));
 
 export default function SignIn(props) {
@@ -58,8 +62,8 @@ export default function SignIn(props) {
   const { t } = useTranslation();
   const history = useHistory();
   const { setToken, config } = useAuth();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState(config.Staff_Need_Password ? "" : t("notNeedPassword"));
+  const [username, setUsername] = useState("user1");
+  const [password, setPassword] = useState(config.Staff_Need_Password ? "user1" : t("notNeedPassword"));
   const [error, setError] = useState();
   const [isLoading, setLoading] = useState(false);
 
@@ -89,6 +93,9 @@ export default function SignIn(props) {
       <Typography component="h1" variant="h5">
         {t("signin")}
       </Typography>
+      <Alert variant="filled" severity="info" className={classes.previewNotice}>
+        此為預覽版系統, 預設帳號及密碼皆為user1
+      </Alert>
       <form className={classes.form} onSubmit={handleSubmit}>
         <TextField
           variant="outlined"

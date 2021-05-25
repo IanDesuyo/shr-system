@@ -16,7 +16,7 @@ os.environ["BT_SECRET"] = "8e352bf7"
 os.environ["Need_tempVerified"] = ""  # 留空為False
 
 # 員工是否需要輸入密碼
-os.environ["Staff_Need_Password"] = ""  # 留空為False
+os.environ["Staff_Need_Password"] = "True"  # 留空為False
 
 # 是否關閉員工登入
 os.environ["Disable_Staff"] = ""  # 留空為False

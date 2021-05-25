@@ -15,3 +15,5 @@ ERROR_404_DEVICE_NOT_FOUND = {"code": "404-2", "msg": "Device Not Found", "i18n"
 ERROR_404_USER_NOT_FOUND = {"code": "404-3", "msg": "User Not Found", "i18n": "errors.userNotFound"}
 
 ERROR_500_SYSTEM_ERROR = {"code": "500", "msg": "System Error", "i18n": "errors.systemError"}
+
+ERROR_403_PREVIEW_NO_MODIFY = {"code": "403-0", "msg": "Can Not Modify", "i18n": "errors.previewNoModify"}

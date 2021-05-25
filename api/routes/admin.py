@@ -443,6 +443,8 @@ def update_user(
     db: Session = Depends(getDB),
 ):
     user = db.query(models.User).filter(models.User.id == user_id).first()
+    if (user.username == "Admin" or user.username == "user1"):
+        raise HTTPException(403, status.ERROR_403_PREVIEW_NO_MODIFY)
 
     if not user:
         raise HTTPException(404, status.ERROR_404_USER_NOT_FOUND)
@@ -484,6 +486,9 @@ def delete_user(admin: str = Depends(checkAdmin), user_id: int = Path(...), db: 
     if not user:
         raise HTTPException(404, status.ERROR_404_USER_NOT_FOUND)
 
+    if (user.username == "Admin" or user.username == "user1"):
+        raise HTTPException(403, status.ERROR_403_PREVIEW_NO_MODIFY)
+        
     linkedRecords = db.query(models.Record).filter(models.Record.userID == user_id).all()
 
     for i in linkedRecords:

@@ -83,7 +83,8 @@
     "temperatureError": "エラーが発生しました(体温), もう一度やり直してください",
     "temperatureTooHigh": "体温は高い, 後でもう一度やり直してください",
     "wrongFormat": "フォーマット違います",
-    "commentTooLong": "コメントは長い, 120ワード内にしてください"
+    "commentTooLong": "コメントは長い, 120ワード内にしてください",
+    "previewNoModify": "これはプレビュー版であり, この設定を変更しないでください。"
   },
   "mtable": {
     "row": "行",

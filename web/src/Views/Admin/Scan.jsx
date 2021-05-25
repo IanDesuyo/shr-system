@@ -53,7 +53,10 @@ export default function Scan(props) {
       }
     )
       .then(res => setRes(res.data))
-      .catch(err => console.error(err));
+      .catch(err => {
+        Snackbar.error(t(err));
+        console.error(err);
+      });
   };
 
   useEffect(() => {

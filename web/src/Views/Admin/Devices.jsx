@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import AddDevice from "../../Components/Admin/AddDevice";
+import Snackbar from "../../Services/Snackbar";
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -28,22 +29,30 @@ export default function Search(props) {
   const { token } = useAuth();
 
   const fetch = () => {
-    getDevices(token).then(res => setData(res.data));
+    getDevices(token)
+      .then(res => setData(res.data))
+      .catch(err => Snackbar.error(t(err)));
   };
 
   const handleDelete = rowData => {
-    deleteDevice(token, rowData.id).then(() => setData(prev => prev.filter(x => x.id !== rowData.id)));
+    deleteDevice(token, rowData.id)
+      .then(() => setData(prev => prev.filter(x => x.id !== rowData.id)))
+      .catch(err => Snackbar.error(t(err)));
   };
 
   const handleModify = data => {
-    modifyDevice(token, data).then(() => setData(prev => [...prev.filter(x => x.id !== data.id), data]));
+    modifyDevice(token, data)
+      .then(() => setData(prev => [...prev.filter(x => x.id !== data.id), data]))
+      .catch(err => Snackbar.error(t(err)));
   };
 
   const handleAdd = data => {
-    addDevice(token, data).then(res => {
-      setData(prev => [...prev, res.data]);
-      downloadDevice(token, res.data.id);
-    });
+    addDevice(token, data)
+      .then(res => {
+        setData(prev => [...prev, res.data]);
+        downloadDevice(token, res.data.id);
+      })
+      .catch(err => Snackbar.error(t(err)));
   };
 
   useEffect(fetch, [token]);

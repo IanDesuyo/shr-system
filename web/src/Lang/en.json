@@ -83,7 +83,8 @@
     "temperatureError": "Wrong Value, please measure again",
     "temperatureTooHigh": "Hyperthermia! please measure again later",
     "wrongFormat": "Incorrect format",
-    "commentTooLong": "Comment overlong, it needs less then 120 words"
+    "commentTooLong": "Comment overlong, it needs less then 120 words",
+    "userNotFound": "User not found"
   },
   "mtable": {
     "row": "rows",

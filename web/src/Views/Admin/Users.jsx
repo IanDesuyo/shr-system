@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import AddUser from "../../Components/Admin/AddUser";
+import Snackbar from "../../Services/Snackbar";
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -28,21 +29,29 @@ export default function Search(props) {
   const { token } = useAuth();
 
   const fetch = () => {
-    getUsers(token).then(res => setData(res.data));
+    getUsers(token)
+      .then(res => setData(res.data))
+      .catch(err => Snackbar.error(t(err)));
   };
 
   const handleDelete = rowData => {
-    deleteUser(token, rowData.id).then(() => setData(prev => prev.filter(x => x.id !== rowData.id)));
+    deleteUser(token, rowData.id)
+      .then(() => setData(prev => prev.filter(x => x.id !== rowData.id)))
+      .catch(err => Snackbar.error(t(err)));
   };
 
   const handleModify = data => {
-    modifyUser(token, data).then(() => setData(prev => [...prev.filter(x => x.id !== data.id), data]));
+    modifyUser(token, data)
+      .then(() => setData(prev => [...prev.filter(x => x.id !== data.id), data]))
+      .catch(err => Snackbar.error(t(err)));
   };
 
   const handleAdd = data => {
-    addUser(token, data).then(res => {
-      setData(prev => [...prev, res.data]);
-    });
+    addUser(token, data)
+      .then(res => {
+        setData(prev => [...prev, res.data]);
+      })
+      .catch(err => Snackbar.error(t(err)));
   };
 
   useEffect(fetch, [token]);

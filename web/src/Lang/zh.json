@@ -85,7 +85,8 @@
     "temperatureError": "體溫異常, 請在試一次",
     "temperatureTooHigh": "體溫過高, 請稍後在試一次",
     "wrongFormat": "格式錯誤",
-    "commentTooLong": "註解過長, 需小於120字"
+    "commentTooLong": "註解過長, 需小於120字",
+    "userNotFound": "找不到此帳號"
   },
   "mtable": {
     "row": "列",

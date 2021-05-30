@@ -85,6 +85,7 @@ export default function About() {
           {[
             { name: "崔守華", image: "https://cdn.discordapp.com/attachments/621641123999383561/843747851142168626/ff321e830a3b8ca4fd5b55a76b130b87.jpg", comment: "指導老師" },
             { name: "楊國慶", image: "https://cdn.discordapp.com/attachments/621641123999383561/843747758141079572/5bde98b81457c917066da5efbb11d323.jpg", comment: "班級導師" },
+            { name: "陳家同 (T.Chen)", image: "https://media.discordapp.net/attachments/549931971195699200/848247377042735104/image0.jpg", comment: "日語翻譯及校正" },
           ].map((val, index) => (
             <Grid item lg={3} xs={12} key={index}>
               <Card>
